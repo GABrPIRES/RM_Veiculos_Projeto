@@ -23,37 +23,13 @@ $(function () {
         $('.slide-testimonials').stop().animate({ 'scrollLeft': offSetX + 'px' });
     }
 
-    /*
-
-    $('#btn-left').click(function () {
-        curIndex--;
-        if (curIndex == amt) {
-            curIndex = 0;
-        }
-        clearInterval(interval);
-        goToSlider(curIndex);
-        setTimeout(autoPlay, 500);
-    })
-
-    $('#btn-right').click(function () {
-        curIndex++;
-        if (curIndex == amt) {
-            curIndex = 0;
-        }
-        clearInterval(interval);
-        goToSlider(curIndex);
-        setTimeout(autoPlay, 500);
-    })
-    */
-
     $('#btn-left').click(function () {
         curIndex--;
         if (curIndex < 0) {
             curIndex = amt - 1;
         }
-        // Verificar se o intervalo já está em execução
+
         if (!interval) {
-            // Iniciar o auto-play novamente após um breve intervalo
             interval = setInterval(function () {
                 curIndex++;
                 if (curIndex == amt) {
@@ -70,9 +46,7 @@ $(function () {
         if (curIndex == amt) {
             curIndex = 0;
         }
-        // Verificar se o intervalo já está em execução
         if (!interval) {
-            // Iniciar o auto-play novamente após um breve intervalo
             interval = setInterval(function () {
                 curIndex++;
                 if (curIndex == amt) {
